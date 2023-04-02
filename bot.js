@@ -15,4 +15,17 @@ bot.on("message", (ctx) => ctx.reply("Got another message!"));
 // This will connect to the Telegram servers and wait for messages.
 
 // Start the bot.
+const express = require('express')
+const app = express()
+const port = process.env.PORT || 3000
+
+app.get('/', (req, res) => {
+  res.send('Hello World!')
+})
+
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
+})
 bot.start();
+
+
